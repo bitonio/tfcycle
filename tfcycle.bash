@@ -7,7 +7,7 @@ set -e -o pipefail
 # Extra debug if needed
 # set -x
 
-LOG_FILE=$(mktemp ${TMPDIR:-/tmp}/tfcycle.log.XXXXXX)
+LOG_FILE=$(mktemp ${TMPDIR:-/tmp/}tfcycle.log.XXXXXX)
 TF_VERSION=$(terraform -version -json | jq -r '.terraform_version')
 TF_TFVARS="${2:-$TF_TFVARS}"
 TF_DESTROY_TIMEOUT=${TF_DESTROY_TIMEOUT:-600}
